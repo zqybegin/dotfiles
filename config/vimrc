@@ -1,0 +1,266 @@
+"-----------------------------------------------------------------------------
+"basic configuration
+"-----------------------------------------------------------------------------
+syntax on "syntax highlight
+filetype plugin indent on  "plugins and indentation based on file type
+set hlsearch "search highlight
+set incsearch "searhc when type
+set ignorecase "ignore search case
+
+"set cuc "current column highlight
+"set cul "current line highlight
+
+set number "show line number
+set relativenumber "show relative line number
+
+set fileencoding=utf-8 "prevent garbled characters
+set fenc=utf-8
+set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936,big－5
+set enc=utf-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+let &termencoding=&encoding
+
+set tabstop=4 "set tab to 4 spaces
+set expandtab
+set shiftwidth=4 "set auto-indent to 4 spaces
+set softtabstop=4 "set the back key to delete 4 spaces
+
+set ruler "set show ruler
+
+set smartindent "set smart auto-indent
+
+set showcmd "show command
+set autochdir  "auto-swith working directory
+
+set nocompatible "remove vi consistency
+
+set history=500 "Sets how many lines of history VIM has to remember
+
+"Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * checktime
+
+"make clipboard access to systerm
+set clipboard=unnamedplus
+
+"no wrap line
+set nowrap
+"-----------------------------------------------------------------------------
+"cursor Settings
+"-----------------------------------------------------------------------------
+let &t_SI.="\e[5 q""SI = INSERT mode
+let &t_SR.="\e[4 q""SR = REPLACE mode
+let &t_EI.="\e[1 q""EI = NORMAL mode (ELSE)
+
+"Cursor settings:
+
+" 1 -> blinking block
+" 2 -> solid block
+" 3 -> blinking underscore
+" 4 -> solid underscore
+" 5 -> blinking vertical bar
+" 6 -> solid vertical bar
+
+"-----------------------------------------------------------------------------
+"Colors and Fonts
+"-----------------------------------------------------------------------------
+"Set regular expression engine automatically
+set regexpengine=0
+
+"Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+"try
+"   colorscheme desert
+"   "colorscheme gruvbox
+"catch
+"endtry
+
+"set background=dark
+
+"Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
+
+"Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+"Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+"-----------------------------------------------------------------------------
+"customize shortcut keys
+"-----------------------------------------------------------------------------
+"Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+"don't use the arrow keys
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+
+"convenient to move to the begin/end of line
+map H ^
+map L $
+
+"type W to fast save
+nnoremap W :w<CR>
+
+"type <ENTER> to disable highlight of word
+nnoremap <CR> :noh<CR><CR>
+
+"-----------------------------------------------------------------------------
+"customize leader keys
+"-----------------------------------------------------------------------------
+"map <leader> to <space>
+let mapleader = "\<space>"
+
+"separate delete and cut: let <leader>d to turely delete
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
+"type <leader>q to close tab
+nnoremap <silent> <leader>q :<C-U>bprevious <bar> bdelete #<CR>
+
+"nerdtree hot key mapping
+nmap <silent> <C-p> :NERDTreeToggle<CR>   "type Ctrl+p to open file tree
+"use tab to change current buffer
+nnoremap <tab> :bp<CR>
+
+"-----------------------------------------------------------------------------
+"plugin install
+"-----------------------------------------------------------------------------
+call plug#begin('~/.vim/plugged')
+ Plug 'scrooloose/nerdtree'             "filesysterm tree
+ Plug 'mhinz/vim-startify'
+ Plug 'lfv89/vim-interestingwords'      "highlight word
+ Plug 'jiangmiao/auto-pairs'            "auto pairs
+"Plug 'vhda/verilog_systemverilog.vim'
+ Plug 'luochen1990/rainbow'             "show pairs color
+ Plug 'Yggdroot/indentLine'             "show pairs line
+ Plug 'itchyny/vim-cursorword'          "underline word in cursor
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+ Plug 'junegunn/vim-easy-align'
+ Plug 'dense-analysis/ale'
+call plug#end()
+"-----------------------------------------------------------------------------
+"plugin: NERDTree
+"-----------------------------------------------------------------------------
+map <leader>ne :NERDTreeToggle<CR>
+let g:NERDTreeWinSize = 25 "set nerdtree size
+let NERDTreeIgnore=['\.pyc','\~$','\.swp'] "ignore the display of the following files
+let NERDTreeShowHidden=1 "show hidden files
+let g:NERDTreeDirArrowExpandable = '▸' "modify the default arrow symbol
+let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"-----------------------------------------------------------------------------
+"plugin: airline
+"-----------------------------------------------------------------------------
+let g:airline#extensions#tabline#enabled = 1               "Automatically displays all buffers
+let g:airline#extensions#tabline#formatter = 'unique_tail' "tab line only show file name
+let g:airline_theme='deus'                                 "theme
+let g:airline_powerline_fonts = 1                          "使用powerline打过补丁的字体
+let g:airline#extensions#tabline#left_sep = ' '            "tabline中当前buffer两端的分隔字符
+let g:airline#extensions#tabline#left_alt_sep = ' '        "tabline中未激活buffer两端的分隔字符
+let g:airline#extensions#tabline#buffer_nr_show = 1        "tabline中buffer显示编号
+
+"-----------------------------------------------------------------------------
+"plugin: rainbow
+"-----------------------------------------------------------------------------
+let g:rainbow_active = 1  "rainbow(show pair color) needed
+
+"-----------------------------------------------------------------------------
+"plugin: indentline
+"-----------------------------------------------------------------------------
+let g:indentLine_enable = 1
+let g:autopep8_disable_show_diff=1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+"-----------------------------------------------------------------------------
+"plugin: easyalign
+"-----------------------------------------------------------------------------
+"Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+"Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"-----------------------------------------------------------------------------
+"plugin: neocomplcache
+"-----------------------------------------------------------------------------
+"let g:neocomplcache_enable_at_startup = 1 "auto start neocomplcache
+"let g:neocomplcache_enable_auto_select = 1 "auto select the first item in the list
+"let g:neocomplcache_min_syntax_length = 2 "Set minimum syntax keyword length.
+"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+"inoremap <expr><C-Y>  neocomplcache#close_popup()
+"inoremap <expr><space>  neocomplcache#undo_completion()
+"inoremap <expr><Enter>  pumvisible() ? "\<C-Y>": "\<Enter>"
+
+"-----------------------------------------------------------------------------
+"plugin: nerdcommender
+"-----------------------------------------------------------------------------
+"my key: ,cl /,cc /,cu /,c<space>
+"let g:NERDSpaceDelims = 1 "add space after comment
+
+"-----------------------------------------------------------------------------
+"plugin: ale
+"-----------------------------------------------------------------------------
+"keep the sign gutter open
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+"show errors or warnings in my statusline
+let g:airline#extensions#ale#enabled = 1
+"use quickfix list instead of the loclist
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+"only enable these linters
+let g:ale_linters = {
+\    'verilog': ['verilator']
+\}
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-J> <Plug>(ale_next_wrap)
+
+"-----------------------------------------------------------------------------
+"plugin: ctags
+"-----------------------------------------------------------------------------
+nmap gi <C-]> "go into instance module or output port
+nmap go <C-o> "go out to upper stage
+
+
+"-----------------------------------------------------------------------------
+"plugin: vlogInst
+"-----------------------------------------------------------------------------
+"so ~/.vim/pack/default/start/vlog_inst_gen/vlog_inst_gen.vim "set path
+
+"key: (,ig)
+
+"-----------------------------------------------------------------------------
+"plugin: snipmate
+"-----------------------------------------------------------------------------
+"imap <tab> <Plug>snipMateTrigger "tab expand code snippets
+"imap <tab> <Plug>snipMateNextOrTrigger
+"imap <C-tab> <Plug>snipMateShow "tab expand code snippets list
+
+"-----------------------------------------------------------------------------
+"some config needed to place at last
+"-----------------------------------------------------------------------------
+"auto update file header modifyTime if write
+"mark space at the last of line
+highlight RedundantSpaces ctermbg=blue guibg=blue
+match RedundantSpaces /\s\+$/
+

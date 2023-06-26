@@ -1,0 +1,24 @@
+# Dotbot configuration files are arrays of tasks, where each task is a dictionary that contains a command name mapping to data for that command.
+# Tasks are run in the order in which they are specified.
+# Commands within a task do not have a defined ordering.
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~","~/.config"]
+
+- link:
+    "~/.bashrc":        "config/bashrc"
+    "~/.zshrc":         "config/zshrc"
+    "~/.gitconfig":     "config/gitconfig"
+    "~/.tmux.conf":     "config/tmux.conf"
+    "~/.vimrc":         "config/vimrc"
+    "~/.config/kitty":  "config/kitty"
+    "~/.config/nvim":   "config/nvim"
+
+- shell:
+  # the git command of supermodule can't influence submodules
+  - [git submodule sync --recursive, prevent URL of .gitmodule from being modified]
+  - [git submodule update --init --recursive, Installing/updating submodules]
+  - [git submodule update --remote --merge, updating submodules]

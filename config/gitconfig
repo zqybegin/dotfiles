@@ -1,0 +1,12 @@
+[user]
+	email = zqybegin@gmail.com
+	name = 22040953-Zhang Qingyu
+[alias]
+	logl = "!git --no-pager log --graph --all --decorate --oneline -n 10"
+	logall = log --all --graph --decorate --oneline
+[core]
+	editor = nvim
+[color]
+	ui = true
+[push]
+	recurseSubmodules = check
