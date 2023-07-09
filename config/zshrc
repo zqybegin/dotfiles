@@ -119,7 +119,7 @@ bindkey '^k' autosuggest-execute
 # environment variable
 #-------------------------------------------------------------------------------
 # path
-export PATH="/home/zqybegin/.local/bin:$PATH"
+export PATH="/usr/lib/ccache:$PATH" ## cache needed
 
 # ysyx needed
 export NEMU_HOME=/home/zqybegin/Workstation/ysyx-workbench/nemu
