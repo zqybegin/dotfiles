@@ -16,6 +16,9 @@
     "~/.vimrc":         "config/vimrc"
     "~/.config/kitty":  "config/kitty"
     "~/.config/nvim":   "config/nvim"
+    "~/.gtkwaverc":     "config/gtkwaverc"
+    "~/.clangd":        "config/clangd"
+    "~/.clang-format":  "config/clang-format"
 
 - shell:
   # the git command of supermodule can't influence submodules

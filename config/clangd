@@ -1,0 +1,6 @@
+CompileFlags:
+  Add:
+  # ysyx needed
+  - -I/home/zqybegin/Workstation/ysyx-workbench/nemu/include
+  - -I/home/zqybegin/Workstation/ysyx-workbench/nemu/src/isa/riscv32/include
+  - -D__GUEST_ISA__=riscv32
