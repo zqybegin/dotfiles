@@ -9,16 +9,18 @@
 - clean: ["~","~/.config"]
 
 - link:
-    "~/.bashrc":        "config/bashrc"
-    "~/.zshrc":         "config/zshrc"
-    "~/.gitconfig":     "config/gitconfig"
-    "~/.tmux.conf":     "config/tmux.conf"
-    "~/.vimrc":         "config/vimrc"
-    "~/.config/kitty":  "config/kitty"
-    "~/.config/nvim":   "config/nvim"
-    "~/.gtkwaverc":     "config/gtkwaverc"
-    "~/.clangd":        "config/clangd"
-    "~/.clang-format":  "config/clang-format"
+    "~/.bashrc":            "config/bashrc"
+    "~/.zshrc":             "config/zsh/zshrc"
+    "~/.p10k_custom.zsh":   "config/zsh/p10k_custom.zsh"
+    "~/.p10k.zsh":          "config/zsh/p10k.zsh"
+    "~/.gitconfig":         "config/gitconfig"
+    "~/.tmux.conf":         "config/tmux.conf"
+    "~/.vimrc":             "config/vimrc"
+    "~/.config/kitty":      "config/kitty"
+    "~/.config/nvim":       "config/nvim"
+    "~/.gtkwaverc":         "config/gtkwaverc"
+    "~/.clangd":            "config/clangd"
+    "~/.clang-format":      "config/clang-format"
 
 - shell:
   # the git command of supermodule can't influence submodules
