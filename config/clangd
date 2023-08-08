@@ -1,7 +1,17 @@
+# all flags define in project/compile_flags.txt
 CompileFlags:
   Add:
-  # ysyx needed
-  - -I/home/zqybegin/Workstation/ysyx-workbench/nemu/include
-  - -I/home/zqybegin/Workstation/ysyx-workbench/nemu/src/isa/riscv32/include
   - -I.
-  - -D__GUEST_ISA__=riscv32
+  - -I./include
+  # nemu need
+  # - -I/home/zqybegin/Workstation/ysyx-workbench/nemu/include
+  # - -I/home/zqybegin/Workstation/ysyx-workbench/nemu/src/isa/riscv32/include
+  # - -D__GUEST_ISA__=riscv32
+  # am need
+  # - -I/home/zqybegin/Workstation/ysyx-workbench/abstract-machine/am/include
+  # - -I/home/zqybegin/Workstation/ysyx-workbench/abstract-machine/am/include/
+  # - -I/home/zqybegin/Workstation/ysyx-workbench/abstract-machine/klib/include
+  # - -I/home/zqybegin/Workstation/ysyx-workbench/abstract-machine/am/src/platform/nemu/include
+  # - -DISA_H=riscv/riscv.h
+  # learn C the hard way need
+  # - -I/home/zqybegin/Workstation/code/C/liblcthw/src
