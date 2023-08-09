@@ -20,7 +20,6 @@
     "~/.config/nvim":       "config/nvim"
     "~/.gtkwaverc":         "config/gtkwaverc"
     "~/.clang-format":      "config/clang-format"
-    "~/.curlrc":            "config/curlrc"
 
 - shell:
   # the git command of supermodule can't influence submodules

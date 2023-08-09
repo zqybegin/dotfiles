@@ -132,9 +132,9 @@ export NVBOARD_HOME=/home/zqybegin/Workstation/ysyx-workbench/nvboard
 # usr configuration
 #-------------------------------------------------------------------------------
 # proxy
-export http_proxy=http://127.0.0.1:7890
-export https_proxy=https://127.0.0.1:7890
-export all_proxy=socks5://127.0.0.1:7890
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
+export all_proxy="socks5://127.0.0.1:7890"
 
 # nvm needs
 export NVM_DIR="$HOME/.nvm"
