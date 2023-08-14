@@ -10,6 +10,7 @@
 
 - link:
     "~/.bashrc":            "config/bashrc"
+    "~/.profile":           "config/profile"
     "~/.zshrc":             "config/zsh/zshrc"
     "~/.p10k_custom.zsh":   "config/zsh/p10k_custom.zsh"
     "~/.p10k.zsh":          "config/zsh/p10k.zsh"

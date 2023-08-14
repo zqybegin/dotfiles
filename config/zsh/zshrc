@@ -119,9 +119,6 @@ bindkey '^k' autosuggest-execute
 #-------------------------------------------------------------------------------
 # environment variable
 #-------------------------------------------------------------------------------
-# path
-export PATH="/usr/lib/ccache:$PATH" ## cache needed
-
 # ysyx needed
 export NEMU_HOME=/home/zqybegin/Workstation/ysyx-workbench/nemu
 export AM_HOME=/home/zqybegin/Workstation/ysyx-workbench/abstract-machine
@@ -131,11 +128,6 @@ export NVBOARD_HOME=/home/zqybegin/Workstation/ysyx-workbench/nvboard
 #-------------------------------------------------------------------------------
 # usr configuration
 #-------------------------------------------------------------------------------
-# proxy
-export http_proxy="http://127.0.0.1:7890"
-export https_proxy="http://127.0.0.1:7890"
-export all_proxy="socks5://127.0.0.1:7890"
-
 # nvm needs
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
