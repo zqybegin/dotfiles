@@ -27,7 +27,7 @@ color_0      54c231
 color_1      54c231
 color_vbox   54c231
 color_grid   666666
-color_trans  041933 #cc0000
-color_vtrans 041933 #cc0000
+# color_trans  041933 # cc0000
+# color_vtrans 041933 # cc0000
 color_value  eeeeee
 color_umark  f9fd01
