@@ -1,2 +1,14 @@
-BasedOnStyle: llvm
+BasedOnStyle: LLVM
+
+AlignConsecutiveMacros: Consecutive
+AlignArrayOfStructures: Right
+AllowShortCaseLabelsOnASingleLine: true
+IndentCaseLabels: true
+
+AllowShortFunctionsOnASingleLine: None
+ColumnLimit: 0
+SortIncludes: false
+
 IndentWidth: 4
+TabWidth: 4
+UseTab: Never
