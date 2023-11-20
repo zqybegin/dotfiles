@@ -123,6 +123,7 @@ export NEMU_HOME=/home/zqybegin/Workstation/ysyx-workbench/nemu
 export AM_HOME=/home/zqybegin/Workstation/ysyx-workbench/abstract-machine
 export NPC_HOME=/home/zqybegin/Workstation/ysyx-workbench/npc
 export NVBOARD_HOME=/home/zqybegin/Workstation/ysyx-workbench/nvboard
+export NAVY_HOME=/home/zqybegin/Workstation/ysyx-workbench/navy-apps
 
 export http_proxy='http://127.0.0.1:7890'
 export https_proxy='http://127.0.0.1:7890'
