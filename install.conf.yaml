@@ -23,6 +23,7 @@
     "~/.clang-format":                "config/clang-format"
     "~/.local/share/fonts/myfonts":   "config/myfonts"
     "~/.config/fontconfig":           "config/fontconfig"
+    "~/.config/Typora/themes":        "config/typora-themes"
 
 - shell:
   # the git command of supermodule can't influence submodules
